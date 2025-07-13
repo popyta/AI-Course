@@ -53,10 +53,10 @@ Terminate when an optimal path to terminal nodes is found
 | 🔗 AND    | Solve **all** children together | B → D **and** E (must solve both) |
 🖼️ Input & Output
 📥 Input:
+📤 Output:
 
-                  <img width="420" height="800" alt="ao-star" src="https://github.com/user-attachments/assets/0d59d60b-a874-48d8-b742-68d296d8a860" />
+                 <img width="420" height="800" alt="ao-star" src="https://github.com/user-attachments/assets/f42f0407-1dfd-4bcd-9f68-2185df9b817b" />
 
-                  📤 Output:
 Optimal Solution Graph:
 
 css
