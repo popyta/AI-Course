@@ -1,54 +1,87 @@
-🎲 Minimax Algorithm
-This project implements the Minimax Algorithm — a fundamental decision-making technique used in two-player zero-sum games. It helps determine the optimal move by minimizing the possible loss in a worst-case scenario, assuming both players play perfectly.
+# 🎲 Minimax Algorithm
 
-🚀 About This Algorithm
-Minimax is a recursive game-tree-based strategy where:
+This implementation demonstrates the **Minimax algorithm** — a decision rule used in two-player zero-sum games to find the optimal move by minimizing the possible loss in the worst-case scenario.
 
-🔹 The Maximizing player aims to maximize the score.
-🔹 The Minimizing player aims to minimize the score.
+---
 
-The algorithm explores all possible moves down to terminal game states (leaf nodes), evaluates their outcomes, and backtracks to choose the best possible decision from the root.
+## 🚀 About This Algorithm
 
-✅ Commonly used in:
+Minimax is a **recursive strategy** that simulates all possible moves in a game tree, assuming both players play optimally:
 
-🎮 Tic-Tac-Toe
+- **Maximizing** player tries to **maximize** the score.  
+- **Minimizing** player tries to **minimize** the score.  
 
-♟️ Chess
+It evaluates the game tree from the current node down to **terminal states (leaf nodes with numeric scores)** and selects the move that guarantees the best outcome under perfect play.
 
-🕹️ Checkers
+✅ Commonly used in games like:
+- 🎮 Tic-Tac-Toe
+- ♟️ Chess
+- 🕹️ Checkers
 
-🧠 How the Algorithm Works
-Start from the root node, representing the current game state.
+---
 
-If the node is a terminal node, return its numeric value.
+## 🧠 How the Algorithm Works
 
-Recursively evaluate all child nodes.
+1. Start at the **root node**, representing the current game state.
+2. If the node is a **terminal node**, return its numeric value.
+3. Otherwise, recursively evaluate the left and right child nodes.
+4. If it's the **maximizing player's** turn, return the **maximum** of the child nodes' values.
+5. If it's the **minimizing player's** turn, return the **minimum** of the child nodes' values.
+6. Propagate the chosen value up the tree until the **root node**'s best move is determined.
 
-At each step:
+---
 
-Maximizer chooses the maximum of the children’s values.
+## 🪜 Step-by-Step Breakdown
 
-Minimizer chooses the minimum of the children’s values.
+1. Check if the current node is terminal → If yes, return its value.  
+2. Recursively apply Minimax to left and right children.  
+3. If it's the **maximizing** player's turn → Return `max(left, right)`  
+4. If it's the **minimizing** player's turn → Return `min(left, right)`  
+5. Repeat until the **root node** receives the optimal value.
 
-The best value is propagated up to the root, representing the optimal move.
+---
 
-🪜 Step-by-Step Breakdown
-text
-Copy
-Edit
-1. Check if the current node is a terminal node:
-       → If yes, return its value.
-2. Recursively apply Minimax to all children.
-3. If it's the Maximizing player's turn:
-       → Return max(left, right, ...)
-4. If it's the Minimizing player's turn:
-       → Return min(left, right, ...)
-5. Repeat this until the root node receives the optimal value.
-🖼️ Input & Output
-📥 Input: Game Tree
+## 🖼️ Input & Output
 
-<img width="340" height="450" alt="min-max" src="https://github.com/user-attachments/assets/3e0101f3-128b-4041-8262-75ca0b7129fe" />
+### 📥 Input Graph Structure
 
-       
+ <img width="340" height="450" alt="min-max" src="https://github.com/user-attachments/assets/0dfca451-7d60-41b9-b165-b4686d34673d" />
+
+- Minimax Algorithm – Optimal Decision Making in Adversarial Games
+
+Each internal node represents a **game state** with two possible moves (children).  
+Leaf nodes contain **numeric scores** representing the game outcome from the **maximizing player's** perspective.
+
+### 📤 Output Example
+
+```
 Best value for the root: 3
-✅ The algorithm determines that the best achievable outcome for the maximizing player starting at node A is 3, assuming optimal play from both sides.
+```
+
+The best achievable value for the **maximizing player** starting at node `'A'` is **3**, assuming both players play optimally.
+
+---
+
+## 🌍 Applications of Minimax
+
+- 🎮 Turn-based games like Tic-Tac-Toe, Chess, and Checkers  
+- 🤖 AI opponents in competitive environments  
+- 🔍 Decision making under adversarial conditions  
+- 🕹️ Game tree exploration and evaluation
+
+---
+
+## ⏱️ Time & Space Complexity
+
+| Type             | Complexity                            |
+|------------------|----------------------------------------|
+| Time Complexity  | O(b^d) (b = branching factor, d = depth) |
+| Space Complexity | O(d) for recursion stack               |
+
+Where:  
+- `b` = average number of children per node  
+- `d` = maximum depth of the game tree
+
+---
+
+> This project showcases the fundamental principle of adversarial decision-making using the Minimax strategy.
