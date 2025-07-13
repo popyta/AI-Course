@@ -51,8 +51,8 @@ Bidirectional BFS speeds up traditional BFS by launching two **simultaneous sear
 
 ### 📥 Input Graph Structure
 
-* Nodes & Edges (undirected or bidirectional preferred)
-* Start and Goal Nodes
+<img width="1038" height="350" alt="bidirectional-search" src="https://github.com/user-attachments/assets/d656030b-b07d-4075-98d8-dae460d8d0a9" />
+
 
 ### 📤 Output Path
 
@@ -67,8 +67,7 @@ Path from S to G: ['S', '1', '4', '6', '7', '8', '9', '11', 'G']
 Include a diagram that shows both search directions:
 
 ```md
-<img width="1038" height="350" alt="bidirectional-search" src="https://github.com/user-attachments/assets/1dfa713f-b38b-4cb1-bcaa-df02aa329be2" />
-
+![Bidirectional BFS](assets/bidirectional-bfs-graph.png)
 ```
 
 ---
@@ -91,4 +90,6 @@ Include a diagram that shows both search directions:
 | 💾 **Space** | `O(b^(d/2))` — Due to storing visited nodes from both directions |
 
 > ✅ Bidirectional BFS is **complete** and **optimal** when used on **undirected** or **bidirectional** graphs.
+
+---
 
