@@ -42,6 +42,8 @@ function findBestAIMove() {
 ---
 
 ## 🕹️ How to Play
+![Screenshot 2025-07-13 235846](https://github.com/user-attachments/assets/8feac89f-a85d-471e-888e-63ea048d1eba)
+
 
 1. Open `index.html` in your browser.
 2. Click two adjacent cells to swap.
