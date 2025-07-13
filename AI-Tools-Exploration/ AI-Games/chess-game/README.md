@@ -41,6 +41,8 @@ function miniMax(board, depth, isMaximizingPlayer) {
 ---
 
 ## 🎮 How to Play
+![Screenshot 2025-07-13 235846](https://github.com/user-attachments/assets/2c069347-6cd1-498b-99b5-6d0c82ac6299)
+
 
 1. Open `index.html` in any browser.
 2. You play as **White**. Click a piece, then a destination square to move.
