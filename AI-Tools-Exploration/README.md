@@ -13,7 +13,7 @@ This folder contains a **1-minute video summary** created as part of the coursew
 This video presents a brief but impactful overview of my 6-month journey in Artificial Intelligence, highlighting:
 
 - 🚀 Core Algorithm Implementations: `A*`, `AO*`, `Minimax`, `Alpha-Beta Pruning`
-- 🎮 Game Development Projects: `Tic Tac Toe`, `Chess`, `Ludo`
+- 🎮 Game Development Projects: `Tic Tac Toe`, `Chess`, `candy-crush-master`
 - 🎨 AI-Powered Multimedia Projects: Videos and Presentations using AI tools
 
 ---
