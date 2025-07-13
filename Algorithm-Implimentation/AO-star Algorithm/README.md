@@ -67,8 +67,7 @@ A
 ├─ H
 └─ I
 
-Optimal Cost from A: 3
-<img width="420" height="800" alt="ao-star" src="https://github.com/user-attachments/assets/0433aa13-3b91-492d-a5a0-0bbc4c4622e7" />
+
 
 📸 **Solution Graph Visualization**  
 <img width="420" height="800" alt="ao-star" src="https://github.com/user-attachments/assets/f42f0407-1dfd-4bcd-9f68-2185df9b817b" />
