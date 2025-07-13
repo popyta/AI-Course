@@ -1,65 +1,78 @@
-♟️ Alpha-Beta Pruning Algorithm in Game Trees
-This project implements the Alpha-Beta Pruning algorithm — a powerful optimization technique applied to the Minimax algorithm. It smartly prunes parts of the game tree that don’t affect the final decision, resulting in a faster and more efficient strategy without compromising on the optimality of results.
+# ♟️ Alpha-Beta Pruning Algorithm in Game Trees
 
-🚀 About This Algorithm
-Alpha-Beta Pruning is a depth-first search technique used in two-player zero-sum games, such as chess or tic-tac-toe. It significantly reduces the number of nodes evaluated by the Minimax algorithm by pruning branches that are guaranteed not to influence the final decision.
+This project implements the **Alpha-Beta Pruning** algorithm — a powerful optimization applied to the **Minimax** algorithm. It prunes branches in the game tree that do not affect the final decision, greatly improving efficiency **without sacrificing optimality**.
 
-✅ Minimax ensures optimal strategy.
+---
 
-✅ Alpha-Beta boosts efficiency by avoiding unnecessary computation.
+## 🚀 About This Algorithm
 
-🧠 How Alpha-Beta Pruning Works
-The algorithm recursively explores a game tree by alternating turns between:
+**Alpha-Beta Pruning** is a **depth-first search** technique used in **two-player zero-sum games** like chess, tic-tac-toe, and checkers. It enhances the Minimax algorithm by skipping over irrelevant branches — drastically reducing the number of nodes evaluated.
 
-Maximizing Player – aims to maximize the score
+- ✅ **Minimax** guarantees an **optimal strategy**.
+- ✅ **Alpha-Beta Pruning** improves performance by avoiding **unnecessary computation**.
 
-Minimizing Player – aims to minimize the score
+---
 
-Two key parameters are maintained:
+## 🧠 How Alpha-Beta Pruning Works
 
-Parameter	Role
-🔺 alpha	Best maximum score the maximizer can guarantee so far
-🔻 beta	Best minimum score the minimizer can guarantee so far
+The algorithm recursively explores the game tree by alternating between:
 
-🔒 Pruning Condition:
-If at any point beta ≤ alpha, the current branch is pruned — i.e., further exploration is stopped, as it won’t affect the final decision.
+- **Maximizing Player** → tries to **maximize** the score.
+- **Minimizing Player** → tries to **minimize** the score.
 
-🪜 Step-by-Step Algorithm Flow
-Start from the root node (e.g., game state A).
+### 🔑 Key Parameters
 
-Recursively evaluate child nodes by alternating between max and min player logic.
+| Parameter | Role                                               |
+|----------|----------------------------------------------------|
+| 🔺 `alpha` | Best maximum score the **maximizer** can guarantee |
+| 🔻 `beta`  | Best minimum score the **minimizer** can guarantee |
 
-Update alpha and beta as better options are discovered.
+### 🔒 Pruning Condition
 
-Prune branches where beta ≤ alpha to save computation.
+> If at any point `beta ≤ alpha`, the current branch is **pruned** — further exploration is stopped as it can’t affect the final decision.
 
-Return the optimal value for the root node once all relevant branches are evaluated.
+---
 
-🖼️ Input & Output
-📥 Input:
-A game tree with evaluation values at terminal nodes
-<img width="366" height="596" alt="alpha-beta" src="https://github.com/user-attachments/assets/01a6bde4-cef9-444b-90e4-72b28256c44c" />
+## 🪜 Step-by-Step Algorithm Flow
 
-📤 Output:
-csharp
-Copy
-Edit
-The optimal value from node 'A' is: 3
-🌍 Applications of Alpha-Beta Pruning
-♟️ Chess Engines (like Stockfish, Deep Blue)
+1. Start from the **root node** (e.g., Game State `A`).
+2. Recursively evaluate child nodes, alternating between max and min logic.
+3. Update `alpha` and `beta` as better scores are found.
+4. **Prune** branches where `beta ≤ alpha` to save computation.
+5. Return the **optimal value** for the root after evaluating relevant branches.
 
-🃏 Board Games (e.g., Tic-Tac-Toe, Checkers)
+---
 
-🤖 Two-Player AI Agents
+## 🖼️ Input & Output
 
-🎮 Minimax Optimization in strategic games
+- 📥 **Input**: A game tree with evaluation scores at terminal (leaf) nodes.
+  
+  <img width="366" height="596" alt="alpha-beta" src="https://github.com/user-attachments/assets/01a6bde4-cef9-444b-90e4-72b28256c44c" />
 
-🔬 Game Theory Simulations
+- 📤 **Output**:
+- 
+---
 
-⏱️ Time & Space Complexity
-Type	Complexity
-⏳ Time	O(b^(m/2)) — where b = branching factor, m = depth
-💾 Space	O(m) — proportional to the maximum depth of tree
+## 🌍 Applications of Alpha-Beta Pruning
 
-🎯 Efficiency Boost:
-Alpha-Beta pruning can search twice as deep as Minimax alone — using the same computational power.
+- ♟️ **Chess Engines** (e.g., Stockfish, Deep Blue)
+- 🃏 **Board Games** (e.g., Tic-Tac-Toe, Checkers)
+- 🤖 **Two-Player AI Agents**
+- 🎮 **Game AI Optimization**
+- 🔬 **Game Theory & Strategy Simulations**
+
+---
+
+## ⏱️ Time & Space Complexity
+
+| Type        | Complexity                                |
+|-------------|--------------------------------------------|
+| ⏳ Time      | `O(b^(m/2))` — where `b = branching factor`, `m = depth` |
+| 💾 Space     | `O(m)` — proportional to maximum tree depth         |
+
+> 🎯 **Efficiency Boost**:  
+> Alpha-Beta pruning allows searching **twice as deep** as Minimax alone — using the **same computation** power.
+
+--
+
+
