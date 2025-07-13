@@ -58,7 +58,8 @@ const moveIndex = findAIMoveBFS(); // Uncomment this to enable BFS
 
 ## 📸 Preview
 
-![Game UI Screenshot](https://via.placeholder.com/500x300?text=Game+UI+Preview)
+![Screenshot 2025-07-13 235538](https://github.com/user-attachments/assets/259ee7d8-f972-4005-a93a-153db4c8bebe)
+
 
 ---
 
