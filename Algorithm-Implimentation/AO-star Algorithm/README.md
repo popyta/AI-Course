@@ -1,95 +1,110 @@
-Graphs
-This project implements the AO* (And-Or Star) algorithm — a powerful, heuristic-driven search algorithm designed specifically for AND-OR graphs. It efficiently finds the optimal solution path by evaluating and combining heuristic and path costs, intelligently handling both AND and OR node relationships.
+# 🌐 AO* Search Algorithm in AND-OR Graphs
 
-🚀 About This Algorithm
-The AO* algorithm is a best-first search strategy tailored for complex problem spaces represented by AND-OR graphs, where:
+This project implements the **AO\*** (And-Or Star) algorithm — a powerful, **heuristic-driven search algorithm** designed specifically for **AND-OR graphs**. It efficiently finds the **optimal solution path** by combining path costs with heuristic estimates, intelligently handling both **AND** and **OR** node relationships.
 
-🔄 OR Nodes denote alternative paths (choose any one child).
+---
 
-🔗 AND Nodes denote combined subproblems (all children must be solved).
+## 🚀 About This Algorithm
 
-Unlike traditional A*, AO* updates its heuristics dynamically, builds a solution graph, and prunes unpromising paths — leading to smarter and faster solutions in complex domains.
+The **AO\*** algorithm is a **best-first search** strategy built for **complex problem spaces** represented using **AND-OR graphs**, where:
 
-🧠 How AO* Works
-Starts from the root node.
+- 🔄 **OR Nodes** represent **alternative paths** (choose any one child).
+- 🔗 **AND Nodes** represent **combined subproblems** (all children must be solved).
 
-Evaluates child nodes depending on whether the current node is AND or OR:
+Unlike traditional A\*, AO\*:
+- Updates its **heuristics dynamically**,
+- Builds a **solution graph**, and
+- **Prunes unpromising paths** to avoid unnecessary exploration.
 
-OR Node → Selects the single child with the lowest combined cost:
-f(n) = g(n) + h(n)
+---
 
-AND Node → Aggregates the total cost of all children + their heuristics.
+## 🧠 How AO* Works
 
-Updates the heuristic cost of the current node based on newly discovered paths.
+1. **Start** from the root node.
+2. **Evaluate** child nodes depending on whether the current node is an AND or OR node:
+   - **OR Node** → Select the child with the **lowest combined cost**:  
+     `f(n) = g(n) + h(n)`
+   - **AND Node** → Aggregate the **total cost of all children + their heuristics**.
+3. **Update** the heuristic value of the current node based on the selected child paths.
+4. **Recursively apply AO\*** to selected children:
+   - For OR → Continue with the **best child**.
+   - For AND → **Expand all children**.
+5. **Maintain a solution graph** that records the current best-known path.
+6. **Terminate** when the goal state(s) are reached with **minimal total cost**.
 
-Recursively applies AO* to child nodes:
+---
 
-For OR, proceeds with the best child.
+## 🪜 Step-by-Step Execution
 
-For AND, processes all children.
+1. Initialize at the **start node** (e.g., `A`)
+2. Evaluate children based on **AND/OR structure**
+3. Select optimal child(ren) based on cost
+4. Update **heuristic values** for parent nodes
+5. Recurse through the selected path(s)
+6. Build and update the **solution graph**
+7. Stop when the **optimal path** to goal/terminal nodes is found
 
-Maintains a solution graph that records the current best path to the goal.
+---
 
-Continues until the goal state(s) are reached with minimal total cost.
-🪜 Step-by-Step Execution
-Initialize at the start node (e.g., A)
+## 📌 AND-OR Semantics
 
-Evaluate its children (AND/OR structure)
-
-Select the optimal child or children (based on cost)
-
-Update the heuristic values for parent nodes
-
-Recurse through selected paths
-
-Build and update the solution graph
-
-Terminate when an optimal path to terminal nodes is found
-
-📌 AND-OR Semantics
 | Node Type | Meaning                         | Example                           |
-| --------- | ------------------------------- | --------------------------------- |
-| 🔄 OR     | Choose **one** child            | A → B or A → C                    |
-| 🔗 AND    | Solve **all** children together | B → D **and** E (must solve both) |
+|-----------|----------------------------------|-----------------------------------|
+| 🔄 OR     | Choose **one** child             | A → B **or** A → C                |
+| 🔗 AND    | Solve **all** children together  | B → D **and** E (must solve both) |
 
+---
 
+## 🖼️ Input & Output
 
-🖼️ Input & Output
-📥 Input:
-📤 Output:
+- 📥 **Input**: AND-OR graph structure with heuristic values.
+- 📤 **Output**: Optimal **solution graph** and **total cost**.
 
-                 <img width="420" height="800" alt="ao-star" src="https://github.com/user-attachments/assets/f42f0407-1dfd-4bcd-9f68-2185df9b817b" />
-
-Optimal Solution Graph:
-
-css
-Copy
-Edit
+Example Output:
 A
-  └─ C
-       ├─ G
-       ├─ H
-       └─ I
+└─ C
+├─ G
+├─ H
+└─ I
+
 Optimal Cost from A: 3
+<img width="420" height="800" alt="ao-star" src="https://github.com/user-attachments/assets/0433aa13-3b91-492d-a5a0-0bbc4c4622e7" />
 
-🌍 Applications of AO*
-🗺️ Navigation Systems
-Route planning involving combined and alternative paths.
+📸 **Solution Graph Visualization**  
+<img width="420" height="800" alt="ao-star" src="https://github.com/user-attachments/assets/f42f0407-1dfd-4bcd-9f68-2185df9b817b" />
 
-🤖 AI Planning & Decision Making
-For hierarchical tasks with decomposable subgoals.
+---
 
-🧩 Puzzle Solvers
-Solving structured problems like the 8-puzzle using decision decomposition.
+## 🌍 Applications of AO\*
 
-🎮 Game AI
-Building AND-OR trees for enemy behavior or multi-step logic in games.
+- 🗺️ **Navigation Systems**  
+  Route planning with combined and alternative paths.
 
-⏱️ Time & Space Complexity
-Type	Complexity
-⏳ Time	Exponential (worst-case)
-💾 Space	Proportional to graph depth and width
+- 🤖 **AI Planning & Decision Making**  
+  Useful in goal trees with decomposable subgoals.
 
-Note: AO* uses heuristics and graph pruning to significantly reduce both time and space in practical cases compared to brute-force approaches.
+- 🧩 **Puzzle Solvers**  
+  Solving structured problems like 8-puzzle or game trees.
+
+- 🎮 **Game AI**  
+  For planning multi-step logic or behavior trees.
+
+---
+
+## ⏱️ Time & Space Complexity
+
+| Type        | Complexity                                      |
+|-------------|-------------------------------------------------|
+| ⏳ Time      | **Exponential** in worst-case (due to branching) |
+| 💾 Space     | **Proportional** to graph depth and width        |
+
+> ⚠️ **Note**: AO\* uses **heuristics and pruning** to reduce both time and space compared to brute-force approaches in practical applications.
+
+---
+
+
+
+
+
 
 
