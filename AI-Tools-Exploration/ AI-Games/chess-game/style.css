@@ -1,0 +1,69 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background: linear-gradient(to right, #ece9e6, #ffffff);
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #444;
+  margin-bottom: 20px;
+}
+
+#chessboard {
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  border: 4px solid #333;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.square {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 45px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  user-select: none;
+}
+
+/* নীল স্কোয়ার */
+.white {
+  background: #4a90e2; 
+  color: white;
+}
+
+/* হালকা গোলাপি স্কোয়ার */
+.black {
+  background: #d61c98;  
+  color: white;
+}
+
+/* হোভার ইফেক্ট */
+.square:hover {
+  transform: scale(1.05);
+}
+
+.white:hover {
+  background-color: #357ABD !important;
+}
+
+.black:hover {
+  background-color: #e60be6 !important;
+}
+
+/* সিলেক্টেড স্কোয়ার */
+.square.selected {
+  outline: 3px solid red;
+  box-shadow: inset 0 0 6px red;
+  background-color: #e60bc2 !important;
+}
